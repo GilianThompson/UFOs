@@ -66,9 +66,12 @@ function updateFilters() {
     //copy of above func that only works for statename at the moment
     tableData.forEach( (row) => {
         console.log("in for loop")
+        if (filters.datetime){
+          filteredData = filteredData.filter((row) => row.datetime === filters.datetime)
+        }
         if (filters.statename) {
-                filteredData = filteredData.filter((row) => row.state === filters.statename)
-            };
+          filteredData = filteredData.filter((row) => row.state === filters.statename)
+        };
         if (filters.cityname){
             filteredData = filteredData.filter((row) => row.city === filters.cityname)
         };
